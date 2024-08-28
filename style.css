@@ -97,18 +97,29 @@ body {
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-.share-menu a img {
-  width: 20px;
-  height: 20px;
+
+/* Añade un triángulo en la parte inferior del menú */
+.share-menu::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #4a586e transparent transparent transparent;
 }
+
 .hidden {
   opacity: 0;
   visibility: hidden;
 }
+
 .visible {
   opacity: 1;
   visibility: visible;
 }
+
 @media (min-width: 1024px) {
   .card {
     background-color: white;
@@ -127,20 +138,8 @@ body {
   }
   .card-body {
     padding: 1rem;
-    font-size: 60%;
+    font-size: 65%;
     justify-content: space-around;
-    & h2 {
-      font-weight: 700;
-    }
-    & p {
-      font-weight: 500;
-    }
-    & footer {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      padding: 1rem;
-    }
   }
   .author {
     & img {
@@ -159,9 +158,9 @@ body {
     max-height: 32px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
   .card-body {
-    padding: 1rem;
+    padding: 1.5rem;
     font-size: 1rem;
     justify-content: space-around;
     & h2 {
